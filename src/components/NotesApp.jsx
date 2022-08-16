@@ -32,6 +32,8 @@ class NotesApp extends React.Component {
 
   onChangeArchiveHandler(id) {
     this.setState((prevState) => {
+      // console.log(prevState.notes);
+      // console.log(...prevState.notes);
       return {
         notes: prevState.notes.map((note) =>
           note.id === id ? { ...note, archived: !note.archived } : note
@@ -55,10 +57,10 @@ class NotesApp extends React.Component {
 
   onAddNoteHandler({ title, body }) {
     this.setState((prevState) => {
-      // console.log(prevState.notes);
-      // console.log(...prevState.notes);
       return {
         notes: [
+          // Spread Operator
+
           ...prevState.notes,
           {
             id: +new Date(),
